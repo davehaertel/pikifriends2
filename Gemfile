@@ -29,7 +29,7 @@ gem 'thin'
 
 gem 'devise'
 
-gem 'foundation'
+gem 'foundation-rails'
 
 group :development do
   gem 'quiet_assets'
