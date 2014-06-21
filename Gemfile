@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'
 
 # Use postgresql as the database for Active Record
-group :production do
-  gem 'pg'
-end
+# group :production do
+#   #gem 'pg'
+# end
 group :development, :test do
   gem 'sqlite3'
 end
