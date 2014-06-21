@@ -1,1 +1,9 @@
-this is a file
+<div class="row">
+	<% @users.each do |user| %>
+		<div>
+			<%= link_to user_path(user.id) do %>
+				<%= user.email %>
+			<% end %>
+		</div>
+	<% end %>
+</div>
