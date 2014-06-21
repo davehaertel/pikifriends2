@@ -29,6 +29,8 @@ gem 'thin'
 
 gem 'devise'
 
+gem 'foundation'
+
 group :development do
   gem 'quiet_assets'
 end 

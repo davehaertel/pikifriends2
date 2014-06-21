@@ -12,15 +12,15 @@ class User < ActiveRecord::Base
   has_many :pictures, :order => 'created_at DESC', :dependent => :destroy
   has_many :profile_comments, :order => 'created_at DESC', :dependent => :destroy
 
-  acts_as_taggable_on :mykeywords
+  # acts_as_taggable_on :mykeywords
 
-  file_column :image,
-              :root_path => File.join(RAILS_ROOT, "public/uploaded"),
-              :web_root => "uploaded/",
-              :magick => {:versions => {
-                :thumb => {:size => '50x50'},
-                :medium => {:size => '320x320'}
-            }}
+  # file_column :image,
+  #             :root_path => File.join(RAILS_ROOT, "public/uploaded"),
+  #             :web_root => "uploaded/",
+  #             :magick => {:versions => {
+  #               :thumb => {:size => '50x50'},
+  #               :medium => {:size => '320x320'}
+  #           }}
 
   def screen_name
       self.firstname + ', ' + self.lastname.slice(0..0)
