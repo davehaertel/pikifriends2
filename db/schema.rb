@@ -11,7 +11,73 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621172101) do
+ActiveRecord::Schema.define(version: 20140621183801) do
+
+  create_table "blog_comments", force: true do |t|
+    t.string "message"
+  end
+
+  create_table "blogs", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "classrooms", force: true do |t|
+  end
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.string   "shortname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "faq_categories", force: true do |t|
+  end
+
+  create_table "faqs", force: true do |t|
+  end
+
+  create_table "friendships", force: true do |t|
+    t.integer  "request_user_id"
+    t.integer  "replay_user_id"
+    t.boolean  "linked"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "grades", force: true do |t|
+  end
+
+  create_table "image_comments", force: true do |t|
+  end
+
+  create_table "pictures", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "piki_entries", force: true do |t|
+  end
+
+  create_table "profile_comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "write_user_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schools", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140621172101) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "proofreader_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
