@@ -8,7 +8,10 @@
 <body>
 	<%= render 'layouts/topbar' %>
 	<%= render 'layouts/notifications' %>
+	<%= render 'layouts/breadcrumbs' %>
 	<%= yield %>
+	<%= render 'layouts/footer' %>
+	
 	
   	<%= javascript_include_tag "application" %>
 </body>
